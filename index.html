@@ -66,6 +66,191 @@ footer{text-align:center;color:var(--mut);padding:30px;font-size:.85rem}
 .b3::after{background:linear-gradient(180deg,rgba(8,11,18,.62),rgba(8,11,18,.82)),radial-gradient(circle at 80% 20%,rgba(56,224,176,.2),transparent 55%),radial-gradient(circle at 20% 80%,rgba(106,123,255,.22),transparent 55%)}
 @keyframes kb{from{scale:1;rotate:0deg}to{scale:1.14;rotate:1deg}}
 @keyframes glow{from{opacity:.85}to{opacity:1}}
+
+/* =========================
+   RESPONSIVE : tablettes et mobiles
+   ========================= */
+html, body {
+  width: 100%;
+  min-width: 320px;
+}
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+}
+input, textarea, button {
+  max-width: 100%;
+}
+input, textarea {
+  width: 100%;
+}
+form {
+  width: 100%;
+}
+section {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card, .two > *, .grid > * {
+  min-width: 0;
+}
+h1, h2, h3, p, a, span {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 12px 4vw;
+  }
+  nav a {
+    padding: 7px 10px;
+  }
+  section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  }
+  .two {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    padding: 9px 4vw 10px;
+  }
+  .logo {
+    text-align: center;
+    font-size: 1rem;
+  }
+  nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: nowrap;
+  }
+  nav li {
+    min-width: 0;
+    flex: 1 1 0;
+    text-align: center;
+  }
+  nav a {
+    display: block;
+    padding: 7px 3px;
+    font-size: clamp(.68rem, 2.8vw, .82rem);
+    white-space: nowrap;
+  }
+  section {
+    min-height: auto;
+    padding: 125px 5vw 58px;
+  }
+  #home {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: 145px;
+    padding-bottom: 55px;
+  }
+  h1 {
+    font-size: clamp(2rem, 10vw, 3.3rem);
+    overflow-wrap: anywhere;
+  }
+  .type {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+  .btns {
+    gap: 10px;
+  }
+  .btn {
+    padding: 11px 17px;
+    font-size: .92rem;
+  }
+  .scroll {
+    margin-top: 30px;
+  }
+  .grid, .two {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+  .card {
+    padding: 19px;
+  }
+  .stats {
+    gap: 18px 25px;
+  }
+  .stats strong {
+    font-size: 1.7rem;
+  }
+  form {
+    max-width: none;
+  }
+  footer {
+    padding: 24px 5vw;
+  }
+  .band::before {
+    animation-duration: 36s;
+  }
+}
+
+@media (max-width: 380px) {
+  nav {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  nav a {
+    font-size: .68rem;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btns .btn {
+    width: 100%;
+  }
+  .filters {
+    gap: 6px;
+  }
+  .filters button {
+    padding: 7px 12px;
+    font-size: .82rem;
+  }
+  .stats {
+    gap: 15px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  #home {
+    min-height: 650px;
+    padding-top: 130px;
+  }
+  section {
+    padding-top: 120px;
+  }
+}
+
 @media(max-width:640px){nav ul{gap:0}nav a{padding:6px 8px;font-size:.8rem}.logo{font-size:.9rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
